@@ -231,7 +231,7 @@ public class QRCodeIllustrationActivity extends BaseActivity implements OnClickL
                         }
 
                     } else if ("404".equals(result.getError_code())) {
-                        ActivityUtil.showToast(mContext, "其它错误");
+                        Toasty.warning(mContext, "其它错误").show();
                     }
                 }
 

@@ -185,7 +185,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/layout_vertical_margin_small"
                 android:layout_marginTop="@dimen/layout_vertical_margin_small"
-                android:background="@color/white"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -193,6 +192,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:background="@drawable/selector_settings_layout"
+                    android:foreground="?android:attr/selectableItemBackground"
                     android:paddingLeft="@dimen/activity_horizontal_margin"
                     android:paddingRight="@dimen/activity_horizontal_margin"
                     android:visibility="gone">

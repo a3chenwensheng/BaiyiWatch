@@ -1,5 +1,6 @@
 package com.baiyi.watch.member;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.baiyi.watch.aqgs2.BaseActivity;
 import com.baiyi.watch.aqgs2.MyApplication;
 import com.baiyi.watch.aqgs2.R;
+import com.baiyi.watch.dialog.BaseDialog;
 import com.baiyi.watch.model.Member4Show;
 import com.baiyi.watch.model.Person;
 import com.baiyi.watch.net.BaseApi;
@@ -45,7 +47,7 @@ public class SettingsMemberActivity extends BaseActivity implements OnClickListe
     private Member4Show mMember4Show;
     private Person mPerson;
 
-    //private BaseDialog mDeleteMemberDialog;// 移出家庭圈对话框
+    private BaseDialog mDeleteMemberDialog;// 移出家庭圈对话框
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,27 +115,28 @@ public class SettingsMemberActivity extends BaseActivity implements OnClickListe
     }
 
     private void showDeleteMemberDialog() {
-//		mDeleteMemberDialog = new BaseDialog(mContext);
-//		mDeleteMemberDialog.setTitle("提示");
-//		mDeleteMemberDialog.setMessage("是否确认移出家庭圈");
-//		mDeleteMemberDialog.setTitleLineVisibility(View.INVISIBLE);
-//		mDeleteMemberDialog.setButton1("取消", new DialogInterface.OnClickListener() {
-//
-//			@Override
-//			public void onClick(DialogInterface dialog, int which) {
-//				mDeleteMemberDialog.dismiss();
-//			}
-//		});
-//		mDeleteMemberDialog.setButton2("确认", new DialogInterface.OnClickListener() {
-//
-//			@Override
-//			public void onClick(DialogInterface dialog, int which) {
-//				deleteMember();
-//				mDeleteMemberDialog.dismiss();
-//			}
-//		});
-//
-//		mDeleteMemberDialog.show();
+		mDeleteMemberDialog = new BaseDialog(mContext);
+		mDeleteMemberDialog.setTitle("提示");
+		mDeleteMemberDialog.setMessage("是否确认移出家庭圈？");
+        mDeleteMemberDialog.setRemark("移出家庭圈后，该成员将看不到设备的相关信息");
+		mDeleteMemberDialog.setTitleLineVisibility(View.INVISIBLE);
+		mDeleteMemberDialog.setButton1("取消", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				mDeleteMemberDialog.dismiss();
+			}
+		});
+		mDeleteMemberDialog.setButton2("确认", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				deleteMember();
+				mDeleteMemberDialog.dismiss();
+			}
+		});
+
+		mDeleteMemberDialog.show();
     }
 
     private void deleteMember() {
@@ -163,7 +166,7 @@ public class SettingsMemberActivity extends BaseActivity implements OnClickListe
                 if (result.isSuccess()) {
                     // TODO
                     //getGroupMembers(mMember4Show.getGroup_ownerid());// 加载家庭圈所有成员
-                    ActivityUtil.showToast(mContext, "成功移出家庭圈");
+                    Toasty.success(mContext, "成功移出家庭圈").show();
                     finish();
                 } else {
                     Toasty.error(mContext, result.getError_desc()).show();

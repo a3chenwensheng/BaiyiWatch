@@ -66,6 +66,7 @@ public class AddActivity extends BaseActivity implements OnClickListener {
 			break;
 		case R.id.add_app_layout:
 			//redictToActivity(mContext, AddAppMemberActivity.class, null);
+
 			break;
 		case R.id.add_watch_layout:
 			redictToActivity(mContext, QRCodeIllustrationActivity.class, null);
