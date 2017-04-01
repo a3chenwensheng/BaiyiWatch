@@ -118,7 +118,7 @@ public class SettingsMemberActivity extends BaseActivity implements OnClickListe
 		mDeleteMemberDialog = new BaseDialog(mContext);
 		mDeleteMemberDialog.setTitle("提示");
 		mDeleteMemberDialog.setMessage("是否确认移出家庭圈？");
-        mDeleteMemberDialog.setRemark("移出家庭圈后，该成员将看不到设备的相关信息");
+        mDeleteMemberDialog.setRemark("*移出家庭圈后，该成员将看不到设备的相关信息");
 		mDeleteMemberDialog.setTitleLineVisibility(View.INVISIBLE);
 		mDeleteMemberDialog.setButton1("取消", new DialogInterface.OnClickListener() {
 
