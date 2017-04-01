@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/layout_horizontal_margin_small"
+        android:layout_marginRight="@dimen/layout_horizontal_margin_small"
+        android:layout_marginTop="@dimen/layout_horizontal_margin"
+        android:visibility="visible" >
+
+        <TextView
+            android:id="@+id/report_pre_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/layout_horizontal_margin_smallest"
+            android:gravity="center"
+            android:padding="@dimen/layout_horizontal_margin_smallest"
+            android:text="上一周"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/report_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="2016年5月9日"
+            android:textColor="@color/default_text_night"
+            android:textSize="@dimen/text_size_medium2" />
+
+        <TextView
+            android:id="@+id/report_next_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/layout_horizontal_margin_smallest"
+            android:gravity="center"
+            android:padding="@dimen/layout_horizontal_margin_smallest"
+            android:text="下一周"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/report_pedometer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_vertical_margin_small"
+        android:layout_marginTop="@dimen/layout_vertical_margin_smallest"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_vertical_margin_small"
+        android:visibility="visible" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="计步"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="上周步数"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal" >
+
+            <com.baiyi.watch.widget.PedometerReportAxisYView2
+                android:layout_width="32dp"
+                android:layout_height="match_parent" />
+
+            <com.baiyi.watch.widget.PedometerReportView2
+                android:id="@+id/pedometer_report_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32dp"
+                android:text="上周走了 "
+                android:textColor="@color/default_text_night"
+                android:textSize="@dimen/text_size_small2" />
+
+            <TextView
+                android:id="@+id/pedometer_report_step_total_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#00c7ff"
+                android:textSize="@dimen/text_size_medium2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 步"
+                android:textColor="@color/default_text"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="活跃时间"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal" >
+
+            <com.baiyi.watch.widget.PedometerReportAxisYView3
+                android:layout_width="32dp"
+                android:layout_height="match_parent" />
+
+            <com.baiyi.watch.widget.PedometerActivityReportView
+                android:id="@+id/pedometer_activity_report_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="卡路里"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <com.baiyi.watch.widget.CalorieView
+            android:id="@+id/pedometer_calorie_report_view"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上周共走了 "
+                android:textColor="@color/default_text_night"
+                android:textSize="@dimen/text_size_small2" />
+
+            <TextView
+                android:id="@+id/pedometer_report_distance_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#00c7ff"
+                android:textSize="@dimen/text_size_small2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" km"
+                android:textColor="@color/default_text_night"
+                android:textSize="@dimen/text_size_small2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="消耗卡路里 "
+                android:textColor="@color/default_text_night"
+                android:textSize="@dimen/text_size_small2" />
+
+            <TextView
+                android:id="@+id/pedometer_report_calorie_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#00c7ff"
+                android:textSize="@dimen/text_size_small2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 千卡"
+                android:textColor="@color/default_text_night"
+                android:textSize="@dimen/text_size_small2" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/report_sleep_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_vertical_margin_small"
+        android:layout_marginTop="@dimen/layout_vertical_margin_smallest"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_vertical_margin_small"
+        android:visibility="visible" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="睡眠"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:padding="@dimen/layout_vertical_margin_smallest" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/circle_bg_blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="深睡"
+                    android:textColor="@color/default_text_night"
+                    android:textSize="@dimen/text_size_medium" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/layout_horizontal_margin"
+                android:gravity="center" >
+
+                <TextView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/circle_bg_blue3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="浅睡"
+                    android:textColor="@color/default_text_night"
+                    android:textSize="@dimen/text_size_medium" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="@dimen/layout_horizontal_margin_small"
+            android:orientation="horizontal" >
+
+            <com.baiyi.watch.widget.SleepReportView2
+                android:id="@+id/sleep_report_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/layout_vertical_margin_smallest" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="全天睡眠"
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <TextView
+                        android:id="@+id/sleep_duration_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="--"
+                        android:textColor="@color/default_text_night"
+                        android:textSize="@dimen/text_size_small2" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/line_height"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="全天深睡"
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <TextView
+                        android:id="@+id/deep_sleep_duration_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="--"
+                        android:textColor="@color/default_text_night"
+                        android:textSize="@dimen/text_size_small2" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/line_height"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="全天浅睡"
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <TextView
+                        android:id="@+id/light_duration_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="--"
+                        android:textColor="@color/default_text_night"
+                        android:textSize="@dimen/text_size_small2" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:layout_marginBottom="@dimen/layout_horizontal_margin_small"
+                android:layout_marginTop="@dimen/layout_horizontal_margin_small"
+                android:background="@color/light_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center" >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="昨晚入睡"
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <TextView
+                        android:id="@+id/sleep_begin_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="--"
+                        android:textColor="@color/default_text_night"
+                        android:textSize="@dimen/text_size_small2" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/line_height"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="今天醒来"
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <TextView
+                        android:id="@+id/sleep_end_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="--"
+                        android:textColor="@color/default_text_night"
+                        android:textSize="@dimen/text_size_small2" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="@dimen/line_height"
+                    android:layout_height="match_parent"
+                    android:background="@color/light_gray" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="清醒时长"
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <TextView
+                        android:id="@+id/sleep_awake_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="--"
+                        android:textColor="@color/default_text_night"
+                        android:textSize="@dimen/text_size_small2" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/report_heartrate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_vertical_margin_small"
+        android:layout_marginTop="@dimen/layout_vertical_margin_smallest"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_vertical_margin_small"
+        android:visibility="visible" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="心率"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium2" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="日间平均心率"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal" >
+
+            <com.baiyi.watch.widget.HeartRateAxisYView2
+                android:layout_width="32dp"
+                android:layout_height="match_parent" />
+
+            <com.baiyi.watch.widget.DaylightHeartRateReportView
+                android:id="@+id/daylight_heart_rate_report_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="夜间平均心率"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal" >
+
+            <com.baiyi.watch.widget.HeartRateAxisYView2
+                android:layout_width="32dp"
+                android:layout_height="match_parent" />
+
+            <com.baiyi.watch.widget.DaylightHeartRateReportView
+                android:id="@+id/night_heart_rate_report_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="静息心率"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal" >
+
+            <com.baiyi.watch.widget.HeartRateAxisYView2
+                android:layout_width="32dp"
+                android:layout_height="match_parent" />
+
+            <com.baiyi.watch.widget.RestingHeartRateReportView
+                android:id="@+id/resting_heart_rate_report_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <com.baiyi.watch.widget.ExpandableTextView
+            android:id="@+id/expand_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:animAlphaStart="1"
+            app:maxCollapsedLines="2" >
+
+            <TextView
+                android:id="@id/expandable_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/default_text_night"
+                android:textSize="@dimen/text_size_small2" />
+
+            <ImageButton
+                android:id="@id/expand_collapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:background="@android:color/transparent" />
+        </com.baiyi.watch.widget.ExpandableTextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/report_fall_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_vertical_margin_small"
+        android:layout_marginTop="@dimen/layout_vertical_margin_smallest"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_vertical_margin_small" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="姿态异常"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <com.baiyi.watch.widget.FallAxisYView2
+                android:layout_width="32dp"
+                android:layout_height="match_parent" />
+
+            <com.baiyi.watch.widget.FallReportView
+                android:id="@+id/fall_report_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/report_care_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/layout_vertical_margin_small"
+        android:layout_marginTop="@dimen/layout_vertical_margin_smallest"
+        android:orientation="vertical"
+        android:padding="@dimen/layout_vertical_margin_small" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="子女关怀度"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal" >
+
+            <com.baiyi.watch.widget.RadarView
+                android:id="@+id/care_report_radarview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

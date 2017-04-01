@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/group_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray"
+        android:padding="@dimen/layout_horizontal_margin_small">
+
+        <TextView
+            android:id="@+id/group_tv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:lines="1"
+            android:text="分类"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <TextView
+            android:id="@+id/leave_tv"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:background="@drawable/rect_bg"
+            android:gravity="center"
+            android:text="解 散"
+            android:textColor="@color/theme_color"
+            android:textSize="@dimen/text_size_medium"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/member_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_item_layout"
+        android:orientation="horizontal"
+        android:padding="@dimen/layout_horizontal_margin_small">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/member_avatar_imv"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_avatar"
+            app:civ_border_color="@color/default_pressed"
+            app:civ_border_width="2dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/layout_horizontal_margin_smallest"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/member_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:lines="1"
+                android:text="名字"
+                android:textColor="@color/default_text"
+                android:textSize="@dimen/text_size_medium" />
+
+            <TextView
+                android:id="@+id/member_phone_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/layout_horizontal_margin_small"
+                android:gravity="center"
+                android:lines="1"
+                android:text="110"
+                android:textColor="@color/default_text_night"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/layout_horizontal_margin_smallest"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="@dimen/layout_horizontal_margin_small"
+                android:gravity="center"
+                android:lines="1"
+                android:text="管理员"
+                android:textColor="@color/default_text_night"
+                android:textSize="@dimen/text_size_medium"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="activity_horizontal_margin_least">4dp</dimen>
+    <dimen name="activity_horizontal_margin_small">8dp</dimen>
+    <dimen name="activity_vertical_margin_least">4dp</dimen>
+    <dimen name="activity_vertical_margin_small">8dp</dimen>
+
+    <!-- body content -->
+    <dimen name="layout_horizontal_margin_smallest">2dp</dimen>
+    <dimen name="layout_horizontal_margin_small">10dp</dimen>
+    <dimen name="layout_horizontal_margin">20dp</dimen>
+    <dimen name="layout_horizontal_margin_large">30dp</dimen>
+    <dimen name="layout_vertical_margin_smallest">2dp</dimen>
+    <dimen name="layout_vertical_margin_small">10dp</dimen>
+    <dimen name="layout_vertical_margin">20dp</dimen>
+    <dimen name="layout_vertical_margin_large">30dp</dimen>
+
+    <dimen name="text_size_small">12dp</dimen>
+    <dimen name="text_size_small2">14dp</dimen>
+    <dimen name="text_size_medium">16dp</dimen>
+    <dimen name="text_size_medium2">18dp</dimen>
+    <dimen name="text_size_medium3">20dp</dimen>
+    <dimen name="text_size_large">22dp</dimen>
+    <dimen name="text_size_xlarge">30dp</dimen>
+    <dimen name="text_size_bigest">42dp</dimen>
+    <dimen name="text_size_xxbigest">58dp</dimen>
+    <dimen name="text_size_xxxbigest">78dp</dimen>
+
+    <dimen name="topbar_height">48dip</dimen>
+    <dimen name="topbar_height_large">56dip</dimen>
+    <dimen name="statusbar_height">20dip</dimen>
+    <dimen name="button_height_small">42dip</dimen>
+    <dimen name="button_height">48dip</dimen>
+    <dimen name="button_height_large">56dip</dimen>
+    <dimen name="button_min_width">120dip</dimen>
+
+    <dimen name="edit_height_small">42dip</dimen>
+    <dimen name="edit_height">48dip</dimen>
+    <dimen name="edit_height_large">56dip</dimen>
+
+    <dimen name="line_height">1px</dimen>
+
+    <dimen name="heart_rate_tb">10dp</dimen>
+
+    <dimen name="header_height">60dp</dimen>
+    <dimen name="footer_height">90dp</dimen>
+    <dimen name="footer_padding">10dp</dimen>
+
+</resources>

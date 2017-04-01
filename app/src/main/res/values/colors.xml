@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF9934</color>
+    <color name="colorPrimaryDark">#083939</color>
+    <color name="colorAccent">#FF9934</color>
+
+    <color name="theme_color">#FF9934</color>
+    <color name="theme_color2">#FF8201</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="translucent">#88252525</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="light_white">#FAFAFA</color>
+    <color name="red">#E92D2C</color>
+    <color name="light_red">#E3423A</color>
+    <color name="gray">#4d4d4d</color>
+    <color name="light_gray">#D2D1D5</color>
+    <color name="text_noselect">#7A7A7A</color>
+    <color name="text_select">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="green">#25EA47</color>
+
+    <color name="default_text_night">#ff747474</color>
+    <color name="default_text">#ff454545</color>
+    <color name="default_bg">#EEEEEE</color>
+    <color name="default_pressed">#10000000</color>
+    <color name="shadow_color">#19000000</color>
+
+    <color name="drawer_home_color">#25AE5E</color>
+    <color name="drawer_wiki_color">#F16E00</color>
+    <color name="drawer_family_color">#3E84F4</color>
+
+    <color name="alertdialog_line">#c6c6c6</color>
+    <color name="actionsheet_blue">#037BFF</color>
+    <color name="actionsheet_red">#FD4A2E</color>
+    <color name="actionsheet_gray">#8F8F8F</color>
+
+    <color name="data_color1">#32b16c</color>
+    <color name="data_color2">#ff6e23</color>
+    <color name="data_color3">#ff0000</color>
+
+    <color name="sleep_blank">#AAAAAA</color>
+    <color name="sleep_awake">#78E0FF</color>
+    <color name="sleep_light">#26B8E4</color>
+    <color name="sleep_deep">#066C8A</color>
+
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#c0ff9934</color>
+
+
+</resources>

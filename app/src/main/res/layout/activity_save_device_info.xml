@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/back_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_settings_layout2"
+            android:drawableLeft="@mipmap/icon_title_back"
+            android:gravity="center"
+            android:paddingLeft="@dimen/activity_horizontal_margin_small"
+            android:paddingRight="@dimen/activity_horizontal_margin" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="完善设备佩戴者信息"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium3" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/layout_horizontal_margin"
+            android:paddingRight="@dimen/layout_horizontal_margin" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_vertical_margin"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="*"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size_medium3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="佩戴者姓名："
+                        android:textColor="@color/default_text_night"
+                        android:textSize="@dimen/text_size_medium" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edit_height_small"
+                    android:background="@null"
+                    android:drawablePadding="10dip"
+                    android:maxLength="10"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/default_text"
+                    android:textSize="@dimen/text_size_medium2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/light_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="*"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/text_size_medium3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="监护人手机号码："
+                        android:textColor="@color/default_text_night"
+                        android:textSize="@dimen/text_size_medium" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/care_phone_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/edit_height_small"
+                    android:background="@null"
+                    android:drawablePadding="10dip"
+                    android:inputType="phone"
+                    android:maxLength="13"
+                    android:padding="5dp"
+                    android:singleLine="true"
+                    android:textColor="@color/default_text"
+                    android:textSize="@dimen/text_size_medium2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/light_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="家庭住址："
+                    android:textColor="@color/default_text_night"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <EditText
+                    android:id="@+id/address_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="10dip"
+                    android:maxLength="32"
+                    android:minHeight="@dimen/edit_height_small"
+                    android:padding="5dp"
+                    android:textColor="@color/default_text"
+                    android:textSize="@dimen/text_size_medium2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/light_gray" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="病史："
+                    android:textColor="@color/default_text_night"
+                    android:textSize="@dimen/text_size_medium" />
+
+                <EditText
+                    android:id="@+id/casehistory_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawablePadding="10dip"
+                    android:maxLength="150"
+                    android:minHeight="@dimen/edit_height_small"
+                    android:padding="5dp"
+                    android:textColor="@color/default_text"
+                    android:textSize="@dimen/text_size_medium2" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/light_gray" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/save_btn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="@dimen/layout_vertical_margin"
+                android:background="@drawable/selector_button"
+                android:text="保 存"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_vertical_margin"
+                android:padding="@dimen/layout_horizontal_margin_small"
+                android:text="注：\n1、请认真填写本页面的信息，该信息将作为他人为您/佩戴者提供帮助的依据；\n\n2、当佩戴者需要提供帮助时，热心人士可通过微信或爱牵挂APP扫描设备上的二维码获得该信息并提供帮助。"
+                android:textColor="@color/theme_color"
+                android:textSize="@dimen/text_size_medium" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

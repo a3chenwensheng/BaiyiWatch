@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BaiyiWatch</string>
+
+    <string name="header_hint_refresh_normal">上拉刷新</string>
+    <string name="header_hint_refresh_ready">松开后刷新</string>
+    <string name="header_hint_refresh_loading">刷新中&#8230;</string>
+    <string name="header_hint_refresh_time">上次更新时间：</string>
+    <string name="footer_hint_load_normal">加载更多</string>
+    <string name="footer_hint_load_ready">松开加载更多</string>
+
+    <string name="heart_rate_statement">"        静息心率又称为安静心率，是指在清醒、不活动的安静状态下，每分钟心跳的次数。研究表明，成人静息心率在70次/分，其寿命可达80岁（需注意的是，要排除各种疾病的干扰）。人一生总心跳次数约为25至30亿次，如果静息心率在60次左右，其寿命可达93岁。大量临床研究也证实，静息心率偏快的人，发生各种心血管疾病的危险明显增加，死亡率也高。 "</string>
+    <string name="scan_tips">将包装盒或设备上的二维码放入框内</string>
+    <string name="scan_tips2">在设备插卡并开机的状态下，无法正常绑定，请选择手动输入致电客服，认证身份后我们会将您的绑定码发送至您的手机。</string>
+
+
+
+</resources>
