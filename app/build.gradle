@@ -36,8 +36,8 @@ dependencies {
     compile 'com.pnikosis:materialish-progress:1.7'
     compile files('libs/nineoldandroids-2.4.0.jar')
     compile files('libs/universal-image-loader-1.9.1.jar')
-    compile files('libs/AMap2DMap_4.2.0_AMapLocation_3.3.0_20170120.jar')
     compile files('libs/libammsdk.jar')
     compile files('libs/zxing.jar')
     compile project(':zbarcode')
+    compile files('libs/AMap2DMap_4.2.0_AMapSearch_4.0.0_AMapLocation_3.3.0_20170120.jar')
 }

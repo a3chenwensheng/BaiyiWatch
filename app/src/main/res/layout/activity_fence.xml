@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/back_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_settings_layout2"
+            android:drawableLeft="@mipmap/icon_title_back"
+            android:gravity="center"
+            android:paddingLeft="@dimen/activity_horizontal_margin_small"
+            android:paddingRight="@dimen/activity_horizontal_margin" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="安全围栏"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium3" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <com.amap.api.maps2d.MapView
+            android:id="@+id/bmapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:id="@+id/fence_settings_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right" >
+
+                <Button
+                    android:id="@+id/edit_range_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/layout_vertical_margin_small"
+                    android:background="@drawable/rect_bg"
+                    android:padding="@dimen/layout_horizontal_margin_small"
+                    android:text="编辑区域范围"
+                    android:textColor="@color/theme_color"
+                    android:textSize="@dimen/text_size_medium" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/line_height"
+                android:background="@color/light_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#E0FFFFFF"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/layout_vertical_margin"
+                    android:gravity="center"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="时间"
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium3" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_vertical_margin"
+                        android:gravity="center"
+                        android:text="开关"
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layout_vertical_margin"
+                    android:layout_marginTop="@dimen/layout_vertical_margin"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical" >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical" >
+
+                        <TextView
+                            android:id="@+id/fence_begin_time_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#999798"
+                            android:gravity="center"
+                            android:minWidth="90dp"
+                            android:paddingBottom="@dimen/activity_vertical_margin_least"
+                            android:paddingLeft="@dimen/layout_vertical_margin"
+                            android:paddingRight="@dimen/layout_vertical_margin"
+                            android:paddingTop="@dimen/activity_vertical_margin_least"
+                            android:textColor="@color/light_white"
+                            android:textSize="@dimen/text_size_medium2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/layout_vertical_margin_smallest"
+                            android:text="—"
+                            android:textColor="@color/default_text"
+                            android:textSize="@dimen/text_size_medium2" />
+
+                        <TextView
+                            android:id="@+id/fence_end_time_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="#999798"
+                            android:gravity="center"
+                            android:minWidth="90dp"
+                            android:paddingBottom="@dimen/activity_vertical_margin_least"
+                            android:paddingLeft="@dimen/layout_vertical_margin"
+                            android:paddingRight="@dimen/layout_vertical_margin"
+                            android:paddingTop="@dimen/activity_vertical_margin_least"
+                            android:textColor="@color/light_white"
+                            android:textSize="@dimen/text_size_medium2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/layout_vertical_margin" >
+
+                        <com.baiyi.watch.widget.toggle.ToggleButton
+                            android:id="@+id/fence_toggle"
+                            android:layout_width="54dp"
+                            android:layout_height="30dp"
+                            app:onColor="@color/theme_color" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -14,6 +14,8 @@ import com.baiyi.watch.add.AddActivity;
 import com.baiyi.watch.aqgs2.BaseFragment;
 import com.baiyi.watch.aqgs2.R;
 import com.baiyi.watch.device.DeviceSettingsActivity;
+import com.baiyi.watch.locus.FenceActivity;
+import com.baiyi.watch.record.SelectRecordActivity;
 import com.baiyi.watch.renew.ServiceRecordActivity;
 
 public class DevicesFragment extends BaseFragment implements View.OnClickListener {
@@ -25,7 +27,6 @@ public class DevicesFragment extends BaseFragment implements View.OnClickListene
     private LinearLayout mSettingsLayout;
     private LinearLayout mAddLayout;
     private LinearLayout mRenewLayout;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -91,7 +92,7 @@ public class DevicesFragment extends BaseFragment implements View.OnClickListene
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.fence_layout:
-
+                redictToActivity(mContext, FenceActivity.class, null);
                 break;
             case R.id.remind_layout:
 
@@ -100,7 +101,7 @@ public class DevicesFragment extends BaseFragment implements View.OnClickListene
 
                 break;
             case R.id.record_layout:
-
+                redictToActivity(mContext, SelectRecordActivity.class, null);
                 break;
             case R.id.device_settings_layout:
                 redictToActivity(mContext, DeviceSettingsActivity.class, null);

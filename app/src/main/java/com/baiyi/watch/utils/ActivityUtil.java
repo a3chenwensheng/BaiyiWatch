@@ -21,10 +21,15 @@ import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.amap.api.maps2d.model.LatLng;
 import com.baiyi.watch.aqgs2.MyApplication;
+import com.baiyi.watch.utils.convexhull.JarvisMarch;
+import com.baiyi.watch.utils.convexhull.Point;
 
 import java.io.File;
 import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Activity帮助器类
@@ -349,5 +354,45 @@ public final class ActivityUtil {
         context.startActivity(intent);
     }
 
+    /**
+     * 凸包
+     *
+     * @param mLatLngs
+     * @return
+     */
+    public static List<LatLng> convexHull(List<LatLng> mLatLngs) {
+        ArrayList<Point> plist = new ArrayList<Point>();
+        ArrayList<LatLng> latLnglist = new ArrayList<LatLng>();
+
+        for (LatLng latLng : mLatLngs) {
+            Point point = new Point(latLng.latitude, latLng.longitude);
+            plist.add(point);
+        }
+
+        // pList过滤相同的点
+        int len = plist.size();
+        for (int i = 0; i < len - 1; i++) {
+            Point temp = plist.get(i);
+            for (int j = i + 1; j < len; j++) {
+                if (temp.equals(plist.get(j))) {
+                    plist.remove(j);
+                    j--;
+                    len--;
+                }
+            }
+        }
+
+        JarvisMarch j = new JarvisMarch(plist);
+
+        List<Point> resultlist = j.calculateHull_return_list();
+
+        for (Point point : resultlist) {
+            LatLng latLng = new LatLng(point.getX(), point.getY());
+            latLnglist.add(latLng);
+        }
+
+        return latLnglist;
+
+    }
 
 }

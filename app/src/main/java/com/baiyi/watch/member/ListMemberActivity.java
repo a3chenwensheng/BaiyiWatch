@@ -432,7 +432,6 @@ public class ListMemberActivity extends BaseActivity implements OnClickListener 
                         for (Device device : listD) {
                             MyApplication.getInstance().getDeviceDaoInface().addDevice(device);
 
-
                             if (mDevice != null && device.mId.equals(mDevice.mId)) {
                                 hasDevice = true;
                             }
@@ -458,8 +457,6 @@ public class ListMemberActivity extends BaseActivity implements OnClickListener 
                     } else {
                         MyApplication.getInstance().getDeviceDaoInface().clearDeviceTable();
                     }
-
-
                 } else {
                     Toasty.error(mContext, result.getError_desc()).show();
                     MyApplication.getInstance().getDeviceDaoInface().clearDeviceTable();

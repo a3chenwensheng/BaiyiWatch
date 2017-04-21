@@ -12,6 +12,7 @@ import com.baiyi.watch.aqgs2.BaseActivity;
 import com.baiyi.watch.aqgs2.MyApplication;
 import com.baiyi.watch.aqgs2.R;
 import com.baiyi.watch.dialog.BaseDialog;
+import com.baiyi.watch.model.Member;
 import com.baiyi.watch.model.Member4Show;
 import com.baiyi.watch.model.Person;
 import com.baiyi.watch.net.BaseApi;
@@ -89,6 +90,8 @@ public class SettingsMemberActivity extends BaseActivity implements OnClickListe
         } else {
             mDeleteLayout.setVisibility(View.GONE);
         }
+
+        showData(mMember4Show);
 
     }
 
@@ -199,8 +202,8 @@ public class SettingsMemberActivity extends BaseActivity implements OnClickListe
                 if (result.isSuccess()) {
                     Object bm = result.getResult("Person");
                     if (bm != null && bm instanceof Person) {
-                        mPerson = (Person) bm;// 转换成Person实体
-                        showData(mPerson);
+                        Person person = (Person) bm;// 转换成Person实体
+                        showData(person);
                     }
                 } else {
                     Toasty.error(mContext, result.getError_desc()).show();
@@ -228,6 +231,25 @@ public class SettingsMemberActivity extends BaseActivity implements OnClickListe
         mNickNameTv.setText(person.getNickname() == null ? "" : person.getNickname());
         mPhoneTv.setText(person.getPhone() == null ? "" : person.getPhone());
         mUserNameTv.setText(person.getUsername());
+
+    }
+
+    private void showData(Member4Show member4Show) {
+        // TODO
+        if (null == member4Show) {
+            return;
+        }
+
+        if (!TextUtils.isEmpty(member4Show.getAvatar_url())) {
+            String avtarUrl = member4Show.getAvatar_url();
+            if (!avtarUrl.contains("http")) {
+                avtarUrl = BaseApi.BASE_Url2 + member4Show.getAvatar_url();
+            }
+            ImageLoader.getInstance().displayImage(avtarUrl, mAvatarImv, MyApplication.getInstance().getOptions(R.drawable.ic_avatar));
+        }
+        mHeadNickNameTv.setText(member4Show.getNickname() == null ? "" : member4Show.getNickname());
+        mNickNameTv.setText(member4Show.getNickname() == null ? "" : member4Show.getNickname());
+        mUserNameTv.setText(member4Show.getUsername());
 
     }
 

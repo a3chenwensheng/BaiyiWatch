@@ -242,7 +242,7 @@ public class ReportFragment extends BaseFragment implements View.OnClickListener
 
         if (mDevice != null) {
 
-            if ("S1".equals(mDevice.getType()) || "K1".equals(mDevice.getType()) || "BY102_LOC".equals(mDevice.getType())) {
+            if ("S1".equals(mDevice.getType()) || "K1".equals(mDevice.getType()) || "BY102_LOC".equals(mDevice.getType()) || "C16".equals(mDevice.getType())) {
                 mPedometerLayout.setVisibility(View.GONE);
                 mSleepLayout.setVisibility(View.GONE);
                 mHeartrateLayout.setVisibility(View.GONE);
