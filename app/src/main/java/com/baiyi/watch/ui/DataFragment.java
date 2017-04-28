@@ -14,6 +14,8 @@ import android.widget.TextView;
 import com.baiyi.watch.aqgs2.BaseFragment;
 import com.baiyi.watch.aqgs2.MyApplication;
 import com.baiyi.watch.aqgs2.R;
+import com.baiyi.watch.data.HeartRateActivity;
+import com.baiyi.watch.data.StepActivity;
 import com.baiyi.watch.device.ListDeviceActivity;
 import com.baiyi.watch.locus.LocusActivity;
 import com.baiyi.watch.model.Bloodpressuredata;
@@ -179,6 +181,12 @@ public class DataFragment extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.device_layout:
                 redictToActivity(mContext, ListDeviceActivity.class, null);
+                break;
+            case R.id.heart_rate_layout:
+                redictToActivity(mContext, HeartRateActivity.class, null);
+                break;
+            case R.id.pedometer_layout:
+                redictToActivity(mContext, StepActivity.class, null);
                 break;
             default:
                 break;

@@ -120,6 +120,18 @@
         <activity
             android:name="com.baiyi.watch.add.SaveDeviceInfoActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.locus.FenceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.record.SelectRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.data.HeartRateActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.data.StepActivity"
+            android:screenOrientation="portrait" />
 
         <service android:name="com.amap.api.location.APSService" />
     </application>

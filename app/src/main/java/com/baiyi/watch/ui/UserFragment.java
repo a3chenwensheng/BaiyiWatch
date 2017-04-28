@@ -1,4 +1,4 @@
-package com.baiyi.watch.user;
+package com.baiyi.watch.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -20,6 +20,8 @@ import com.baiyi.watch.net.BaseApi;
 import com.baiyi.watch.net.BaseMessage;
 import com.baiyi.watch.net.HttpCallback;
 import com.baiyi.watch.net.PersonApi;
+import com.baiyi.watch.user.AboutActivity;
+import com.baiyi.watch.user.SettingsPushActivity;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import de.hdodenhof.circleimageview.CircleImageView;

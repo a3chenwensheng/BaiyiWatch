@@ -10,7 +10,6 @@ import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.baiyi.watch.aqgs2.BaseActivity;
 import com.baiyi.watch.aqgs2.R;
 import com.baiyi.watch.device.DevicesFragment;
-import com.baiyi.watch.user.UserFragment;
 
 import java.util.ArrayList;
 
