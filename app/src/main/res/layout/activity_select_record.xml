@@ -33,27 +33,28 @@
             android:textColor="@color/white"
             android:textSize="@dimen/text_size_medium3" />
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/layout_vertical_margin_small"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <LinearLayout
             android:id="@+id/sos_data_record_layout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
             android:background="@drawable/selector_settings_layout"
             android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin" >
+            android:paddingRight="@dimen/activity_horizontal_margin">
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
                 android:text="SOS记录"
@@ -69,18 +70,18 @@
             android:id="@+id/fence_data_record_layout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:orientation="horizontal"
             android:layout_marginTop="1px"
-            android:gravity="center_vertical"
             android:background="@drawable/selector_settings_layout"
             android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin" >
+            android:paddingRight="@dimen/activity_horizontal_margin">
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
                 android:text="电子围栏记录"
@@ -96,18 +97,18 @@
             android:id="@+id/record_data_record_layout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:orientation="horizontal"
             android:layout_marginTop="1px"
-            android:gravity="center_vertical"
             android:background="@drawable/selector_settings_layout"
             android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin" >
+            android:paddingRight="@dimen/activity_horizontal_margin">
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
                 android:text="环境音"
@@ -123,18 +124,18 @@
             android:id="@+id/fall_data_record_layout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:orientation="horizontal"
             android:layout_marginTop="1px"
-            android:gravity="center_vertical"
             android:background="@drawable/selector_settings_layout"
             android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin" >
+            android:paddingRight="@dimen/activity_horizontal_margin">
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
                 android:text="姿态异常记录"
@@ -150,18 +151,18 @@
             android:id="@+id/immediately_remind_layout"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:orientation="horizontal"
             android:layout_marginTop="1px"
-            android:gravity="center_vertical"
             android:background="@drawable/selector_settings_layout"
             android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingLeft="@dimen/activity_horizontal_margin"
-            android:paddingRight="@dimen/activity_horizontal_margin" >
+            android:paddingRight="@dimen/activity_horizontal_margin">
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:drawablePadding="5dp"
                 android:gravity="center_vertical"
                 android:text="即时提醒记录"

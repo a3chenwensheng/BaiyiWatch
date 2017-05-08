@@ -104,20 +104,20 @@ public class QRCodeIllustrationActivity extends BaseActivity implements OnClickL
                 onBackPressed();
                 break;
             case R.id.scan_btn:
-                if (mGroup == null || (mGroup != null && TextUtils.isEmpty(mGroup.mId))) {
-                    //startActivityForResult(new Intent(mContext, QRCodeScanActivity.class), SCANNIN_GREQUEST_CODE);
-                    startActivityForResult(new Intent(mContext, CaptureActivity.class), SCANNIN_GREQUEST_CODE);
-
-                } else {
-                    if (!mIsManager) {
-                        //showAddWatchDialog();
-                    } else {
-                        //startActivityForResult(new Intent(mContext, QRCodeScanActivity.class), SCANNIN_GREQUEST_CODE);
-                        startActivityForResult(new Intent(mContext, CaptureActivity.class), SCANNIN_GREQUEST_CODE);
-                    }
-                }
+//                if (mGroup == null || (mGroup != null && TextUtils.isEmpty(mGroup.mId))) {
+//                    //startActivityForResult(new Intent(mContext, QRCodeScanActivity.class), SCANNIN_GREQUEST_CODE);
+//                    startActivityForResult(new Intent(mContext, CaptureActivity.class), SCANNIN_GREQUEST_CODE);
+//
+//                } else {
+//                    if (!mIsManager) {
+//                        //showAddWatchDialog();
+//                    } else {
+//                        //startActivityForResult(new Intent(mContext, QRCodeScanActivity.class), SCANNIN_GREQUEST_CODE);
+//                        startActivityForResult(new Intent(mContext, CaptureActivity.class), SCANNIN_GREQUEST_CODE);
+//                    }
+//                }
+                startActivityForResult(new Intent(mContext, CaptureActivity.class), SCANNIN_GREQUEST_CODE);
                 break;
-
             default:
                 break;
         }

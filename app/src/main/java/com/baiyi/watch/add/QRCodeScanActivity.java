@@ -63,7 +63,6 @@ public class QRCodeScanActivity extends BaseActivity implements SurfaceHolder.Ca
 
     }
 
-
     /**
      * 初始化布局
      */

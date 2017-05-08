@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/alert_add_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="@drawable/selector_item_layout"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin_small">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/add_large" />
+
+    <TextView
+        android:id="@+id/alert_add_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/layout_vertical_margin_small"
+        android:gravity="center"
+        android:text="你已添加了0个提醒，还可以添加N个提醒"
+        android:textColor="@color/default_text_night"
+        android:textSize="@dimen/text_size_small2" />
+</LinearLayout>
+

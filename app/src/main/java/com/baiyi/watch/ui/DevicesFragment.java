@@ -1,4 +1,4 @@
-package com.baiyi.watch.device;
+package com.baiyi.watch.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -16,6 +16,7 @@ import com.baiyi.watch.aqgs2.R;
 import com.baiyi.watch.device.DeviceSettingsActivity;
 import com.baiyi.watch.locus.FenceActivity;
 import com.baiyi.watch.record.SelectRecordActivity;
+import com.baiyi.watch.remind.RemindWatchListActivity;
 import com.baiyi.watch.renew.ServiceRecordActivity;
 
 public class DevicesFragment extends BaseFragment implements View.OnClickListener {
@@ -95,7 +96,7 @@ public class DevicesFragment extends BaseFragment implements View.OnClickListene
                 redictToActivity(mContext, FenceActivity.class, null);
                 break;
             case R.id.remind_layout:
-
+                redictToActivity(mContext, RemindWatchListActivity.class, null);
                 break;
             case R.id.sos_num_layout:
 

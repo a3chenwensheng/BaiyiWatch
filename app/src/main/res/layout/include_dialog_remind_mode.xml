@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/layout_horizontal_margin_small">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重复"
+            android:textColor="@color/default_text"
+            android:textSize="@dimen/text_size_medium2" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/line_height"
+        android:background="@color/light_gray" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dip"
+        android:orientation="vertical">
+
+        <CheckBox
+            android:id="@+id/remind_mode_once"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="42dip"
+            android:text="仅一次"
+            android:textColor="@color/selector_radio_alert_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <CheckBox
+            android:id="@+id/remind_mode_sun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="42dip"
+            android:text="每周日"
+            android:textColor="@color/selector_radio_alert_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <CheckBox
+            android:id="@+id/remind_mode_mon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="42dip"
+            android:text="每周一"
+            android:textColor="@color/selector_radio_alert_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <CheckBox
+            android:id="@+id/remind_mode_tue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="42dip"
+            android:text="每周二"
+            android:textColor="@color/selector_radio_alert_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <CheckBox
+            android:id="@+id/remind_mode_wed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="42dip"
+            android:text="每周三"
+            android:textColor="@color/selector_radio_alert_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <CheckBox
+            android:id="@+id/remind_mode_thurs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="42dip"
+            android:text="每周四"
+            android:textColor="@color/selector_radio_alert_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <CheckBox
+            android:id="@+id/remind_mode_fri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="42dip"
+            android:text="每周五"
+            android:textColor="@color/selector_radio_alert_text"
+            android:textSize="@dimen/text_size_medium" />
+
+        <CheckBox
+            android:id="@+id/remind_mode_sat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="42dip"
+            android:text="每周六"
+            android:textColor="@color/selector_radio_alert_text"
+            android:textSize="@dimen/text_size_medium" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dip"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/remind_mode_cancel"
+            android:layout_width="0dip"
+            android:layout_height="40dp"
+            android:layout_margin="@dimen/layout_horizontal_margin_small"
+            android:layout_weight="1"
+            android:background="@drawable/rect_button_bg_gray"
+            android:gravity="center"
+            android:text="取消" />
+
+        <Button
+            android:id="@+id/remind_mode_confirm"
+            android:layout_width="0dip"
+            android:layout_height="40dp"
+            android:layout_margin="@dimen/layout_horizontal_margin_small"
+            android:layout_weight="1"
+            android:background="@drawable/rect_button_bg_gray"
+            android:gravity="center"
+            android:text="完成" />
+    </LinearLayout>
+
+</LinearLayout>

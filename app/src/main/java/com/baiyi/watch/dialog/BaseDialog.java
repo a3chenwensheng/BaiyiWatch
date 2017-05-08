@@ -178,7 +178,6 @@ public class BaseDialog extends Dialog implements
 			mLayoutContent.setVisibility(View.VISIBLE);
 			mHtvMessage.setText(text);
 		} else {
-
 			mLayoutContent.setVisibility(View.GONE);
 		}
 	}

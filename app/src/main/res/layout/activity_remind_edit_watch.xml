@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_bg"
+    android:clipToPadding="false"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/back_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:background="@drawable/selector_settings_layout2"
+            android:drawableLeft="@mipmap/icon_title_back"
+            android:gravity="center"
+            android:paddingLeft="@dimen/activity_horizontal_margin_small"
+            android:paddingRight="@dimen/activity_horizontal_margin" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="编辑设备提醒"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium3" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/layout_horizontal_margin_small">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lines="1"
+                        android:text="提醒TA"
+                        android:textColor="@color/default_text_night"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <TextView
+                        android:id="@+id/remind_title_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/layout_horizontal_margin_small"
+                        android:lines="1"
+                        android:text=""
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium2" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/light_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/layout_horizontal_margin_small"
+                    android:paddingRight="@dimen/layout_horizontal_margin_small">
+
+                    <CheckBox
+                        android:id="@+id/checkBox1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="吃药"
+                        android:textColor="@color/selector_radio_alert_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1.0"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="喝水"
+                        android:textColor="@color/selector_radio_alert_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox3"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="起床"
+                        android:textColor="@color/selector_radio_alert_text"
+                        android:textSize="@dimen/text_size_medium" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="@dimen/layout_horizontal_margin_small"
+                    android:paddingRight="@dimen/layout_horizontal_margin_small">
+
+                    <CheckBox
+                        android:id="@+id/checkBox4"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="运动"
+                        android:textColor="@color/selector_radio_alert_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <CheckBox
+                        android:id="@+id/checkBox5"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1.0"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="接孩子"
+                        android:textColor="@color/selector_radio_alert_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <Button
+                        android:id="@+id/title_else_btn"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1.0"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="+"
+                        android:textColor="@color/selector_radio_alert_text"
+                        android:textSize="@dimen/text_size_medium" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_vertical_margin_small"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/remind_edit_watch_time_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/selector_settings_layout"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingLeft="@dimen/layout_horizontal_margin"
+                    android:paddingRight="@dimen/layout_horizontal_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="提醒时间"
+                            android:textColor="@color/default_text"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <TextView
+                            android:id="@+id/remind_edit_watch_time_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="09：00"
+                            android:textColor="@color/default_text_night"
+                            android:textSize="@dimen/text_size_medium" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/light_gray" />
+
+                <RelativeLayout
+                    android:id="@+id/remind_edit_watch_mode_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/selector_settings_layout"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingLeft="@dimen/layout_horizontal_margin"
+                    android:paddingRight="@dimen/layout_horizontal_margin">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="重复"
+                            android:textColor="@color/default_text"
+                            android:textSize="@dimen/text_size_medium" />
+
+                        <TextView
+                            android:id="@+id/remind_edit_watch_mode_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:text="每一天"
+                            android:textColor="@color/default_text_night"
+                            android:textSize="@dimen/text_size_medium" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/line_height"
+                    android:background="@color/light_gray" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="64dp"
+                    android:background="@drawable/selector_settings_layout"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/layout_horizontal_margin"
+                    android:paddingRight="@dimen/layout_horizontal_margin">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="语音"
+                        android:textColor="@color/default_text"
+                        android:textSize="@dimen/text_size_medium" />
+
+                    <com.baiyi.watch.widget.RecordButton
+                        android:id="@+id/speak_btn"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="@dimen/button_height"
+                        android:layout_marginBottom="@dimen/layout_vertical_margin_small"
+                        android:layout_marginLeft="@dimen/layout_horizontal_margin_large"
+                        android:layout_marginRight="@dimen/layout_horizontal_margin_large"
+                        android:layout_marginTop="@dimen/layout_vertical_margin_small"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_medium2" />
+
+                    <LinearLayout
+                        android:id="@+id/voice_play_statue_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/selector_settings_layout2"
+                        android:padding="@dimen/layout_vertical_margin_small"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/voice_play_statue_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/voice_right3" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/save_btn"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/layout_horizontal_margin"
+                android:background="@drawable/selector_button"
+                android:text="保存"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_medium2" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
