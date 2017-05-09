@@ -3,8 +3,11 @@ package com.baiyi.watch.dialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.text.util.Linkify;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -34,9 +37,15 @@ public class BaseDialog extends Dialog implements
 	private OnClickListener mOnClickListener3;// 按钮3的单击监听事件
 
 	public BaseDialog(Context context) {
-		super(context, R.style.Theme_Light_FullScreenDialogAct);
+		super(context, R.style.BaseDialog);
 		mContext = context;
 		setContentView(R.layout.common_dialog_generic);
+		Window dialogWindow = this.getWindow();
+		dialogWindow.setGravity(Gravity.BOTTOM);
+		WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+		lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+		dialogWindow.setAttributes(lp);
+
 		initViews();
 		initEvents();
 		setCancelable(true);

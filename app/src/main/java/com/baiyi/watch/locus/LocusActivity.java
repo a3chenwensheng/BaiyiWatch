@@ -111,7 +111,7 @@ public class LocusActivity extends BaseActivity implements OnClickListener {
 
             // mAMap.setOnMarkerClickListener(this);// 添加点击marker监听事件
             // mAMap.setInfoWindowAdapter(this);// 添加显示infowindow监听事件
-            mAMap.moveCamera(CameraUpdateFactory.zoomTo(18));
+            mAMap.moveCamera(CameraUpdateFactory.zoomTo(17));
 
             mAMap.moveCamera(CameraUpdateFactory.changeLatLng(new LatLng(23.163858, 113.449672)));// 公司地址
             // mAMap.moveCamera(CameraUpdateFactory.changeLatLng(new

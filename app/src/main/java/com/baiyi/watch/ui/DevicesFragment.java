@@ -18,6 +18,7 @@ import com.baiyi.watch.locus.FenceActivity;
 import com.baiyi.watch.record.SelectRecordActivity;
 import com.baiyi.watch.remind.RemindWatchListActivity;
 import com.baiyi.watch.renew.ServiceRecordActivity;
+import com.baiyi.watch.sosnumber.SOSNumberListActivity;
 
 public class DevicesFragment extends BaseFragment implements View.OnClickListener {
 
@@ -99,7 +100,7 @@ public class DevicesFragment extends BaseFragment implements View.OnClickListene
                 redictToActivity(mContext, RemindWatchListActivity.class, null);
                 break;
             case R.id.sos_num_layout:
-
+                redictToActivity(mContext, SOSNumberListActivity.class, null);
                 break;
             case R.id.record_layout:
                 redictToActivity(mContext, SelectRecordActivity.class, null);

@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.baiyi.watch.aqgs2.BaseActivity;
 import com.baiyi.watch.aqgs2.MyApplication;
 import com.baiyi.watch.aqgs2.R;
+import com.baiyi.watch.dialog.RenewDialog;
 import com.baiyi.watch.model.Device;
 import com.baiyi.watch.model.Goods;
 import com.baiyi.watch.model.Order;
@@ -62,7 +63,7 @@ public class ServiceRecordActivity extends BaseActivity implements OnClickListen
 	private Person mPerson;
 	
 	private Servicerecord mServicerecord;
-	//private RenewDialog mRenewDialog;//确认充值对话框
+	private RenewDialog mRenewDialog;//确认充值对话框
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -266,46 +267,46 @@ public class ServiceRecordActivity extends BaseActivity implements OnClickListen
 	}
 	
 	private void showRenewDialog(final Goods goods) {
-//		if (mRenewDialog != null) {
-//			mRenewDialog.cancel();
-//		}
-//		mRenewDialog = new RenewDialog(mContext);
-//		mRenewDialog.setTitle("温馨提示");
-//
-//		java.util.Date date = TimeUtils.jsonStr2StrDate(mServicerecord.getEnd_at());
-//		Calendar cal = Calendar.getInstance();
-//		if (date.compareTo(cal.getTime()) > 0) {
-//			cal.setTime(date);
-//		}
-//		cal.add(Calendar.YEAR,1);
-//		String endDate = TimeUtils.date2Str(cal.getTime(), "yyyy年M月d日");
-//
-//		String imeiStr = mDevice.mId;
-//		if (imeiStr.length() >= 6) {
-//			imeiStr = imeiStr.substring(imeiStr.length() - 6, imeiStr.length());
-//		}
-//		String content = "你即将为" + mDevice.getName() + "（IMEI号后六位" + imeiStr + "）续缴1年平台服务费用，续费后到期时间为：\n";
-//		mRenewDialog.setData(content, endDate);
-//		mRenewDialog.setTitleLineVisibility(View.INVISIBLE);
-//		//mWechatTipsDialog1.setCanceledOnTouchOutside(false);
-//		mRenewDialog.setButton1("取消", new DialogInterface.OnClickListener() {
-//
-//			@Override
-//			public void onClick(DialogInterface dialog, int which) {
-//				mRenewDialog.dismiss();
-//			}
-//		});
-//
-//		mRenewDialog.setButton2("确定", new DialogInterface.OnClickListener() {
-//
-//			@Override
-//			public void onClick(DialogInterface dialog, int which) {
-//				buy(goods);
-//				mRenewDialog.dismiss();
-//			}
-//		});
-//
-//		mRenewDialog.show();
+		if (mRenewDialog != null) {
+			mRenewDialog.cancel();
+		}
+		mRenewDialog = new RenewDialog(mContext);
+		mRenewDialog.setTitle("温馨提示");
+
+		java.util.Date date = TimeUtils.jsonStr2StrDate(mServicerecord.getEnd_at());
+		Calendar cal = Calendar.getInstance();
+		if (date.compareTo(cal.getTime()) > 0) {
+			cal.setTime(date);
+		}
+		cal.add(Calendar.YEAR,1);
+		String endDate = TimeUtils.date2Str(cal.getTime(), "yyyy年M月d日");
+
+		String imeiStr = mDevice.mId;
+		if (imeiStr.length() >= 6) {
+			imeiStr = imeiStr.substring(imeiStr.length() - 6, imeiStr.length());
+		}
+		String content = "你即将为" + mDevice.getName() + "（IMEI号后六位" + imeiStr + "）续缴1年平台服务费用，续费后到期时间为：\n";
+		mRenewDialog.setData(content, endDate);
+		mRenewDialog.setTitleLineVisibility(View.INVISIBLE);
+		//mWechatTipsDialog1.setCanceledOnTouchOutside(false);
+		mRenewDialog.setButton1("取消", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				mRenewDialog.dismiss();
+			}
+		});
+
+		mRenewDialog.setButton2("确定", new DialogInterface.OnClickListener() {
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				buy(goods);
+				mRenewDialog.dismiss();
+			}
+		});
+
+		mRenewDialog.show();
 	}
 	
 	private void buy(Goods goods) {
@@ -347,7 +348,7 @@ public class ServiceRecordActivity extends BaseActivity implements OnClickListen
 					if (order != null) {
 						Bundle bundle = new Bundle();
 						bundle.putSerializable("order", order);
-						//redictToActivity(mContext, PayActivity.class, bundle);
+						redictToActivity(mContext, PayActivity.class, bundle);
 						
 					}
 					

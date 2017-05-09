@@ -31,7 +31,7 @@
     <uses-permission android:name="android.permission.MOUNT_FORMAT_FILESYSTEMS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
     <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
@@ -142,8 +142,33 @@
         <activity
             android:name="com.baiyi.watch.ui.PermissionsActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.sosnumber.SOSNumberListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.sosnumber.SOSNumberEditActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.record.ListSOSActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.record.SOSLocationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.renew.PayActivity"
+            android:screenOrientation="portrait" />
+
 
         <service android:name="com.amap.api.location.APSService" />
+
+        <!-- 微信支付回调 -->
+        <activity
+            android:name="com.baiyi.watch.aqgs2.wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Light.NoTitleBar"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden|adjustPan" />
     </application>
 
 </manifest>

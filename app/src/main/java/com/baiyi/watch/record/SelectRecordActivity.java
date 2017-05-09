@@ -125,7 +125,7 @@ public class SelectRecordActivity extends BaseActivity implements OnClickListene
 			onBackPressed();
 			break;
 			case R.id.sos_data_record_layout:
-				//redictToActivity(mContext, ListSOSActivity.class, null);
+				redictToActivity(mContext, ListSOSActivity.class, null);
 				break;
 			case R.id.fence_data_record_layout:
 				//redictToActivity(mContext, ListFenceDataActivity.class, null);
