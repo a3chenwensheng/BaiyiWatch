@@ -35,6 +35,8 @@ import com.baiyi.watch.widget.toggle.ToggleButton.OnToggleChanged;
 import java.util.ArrayList;
 import java.util.List;
 
+import toasty.Toasty;
+
 /**
  * 
  * 亲情号码列表 Activity
@@ -299,7 +301,7 @@ public class SOSNumberListActivity extends BaseActivity implements OnClickListen
 				if (result.isSuccess()) {
 					getDeviceInfo();
 				} else {
-					ActivityUtil.showToast(mContext, result.getError_desc());
+					Toasty.error(mContext, result.getError_desc()).show();
 				}
 
 			}
@@ -335,7 +337,7 @@ public class SOSNumberListActivity extends BaseActivity implements OnClickListen
 				if (result.isSuccess()) {
 					// TODO
 				} else {
-					ActivityUtil.showToast(mContext, result.getError_desc());
+					Toasty.error(mContext, result.getError_desc()).show();
 					((ToggleButton) view).toggle2();
 				}
 

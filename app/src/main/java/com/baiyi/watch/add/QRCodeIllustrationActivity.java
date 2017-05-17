@@ -116,6 +116,7 @@ public class QRCodeIllustrationActivity extends BaseActivity implements OnClickL
 //                        startActivityForResult(new Intent(mContext, CaptureActivity.class), SCANNIN_GREQUEST_CODE);
 //                    }
 //                }
+
                 startActivityForResult(new Intent(mContext, CaptureActivity.class), SCANNIN_GREQUEST_CODE);
                 break;
             default:

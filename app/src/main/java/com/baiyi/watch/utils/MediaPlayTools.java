@@ -20,6 +20,8 @@ import com.baiyi.watch.aqgs2.MyApplication;
 
 import java.io.File;
 
+import toasty.Toasty;
+
 /**
  *
  * <p>Title: MediaPlayTools.java</p>
@@ -136,6 +138,7 @@ public class MediaPlayTools {
 			}
 			if (streamVolume <= 2) {
 				ActivityUtil.showToast(MyApplication.getInstance(), "当前手机音量过小，可能听不清楚，请将手机音量调大");
+				//Toasty.info(MyApplication.getInstance(), "当前手机音量过小，可能听不清楚，请将手机音量调大").show();
 			}
 			mediaPlayer.start();
 		} catch (Exception e) {

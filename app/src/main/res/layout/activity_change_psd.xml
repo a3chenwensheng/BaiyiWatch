@@ -45,13 +45,14 @@
         android:orientation="vertical"
         android:padding="@dimen/layout_horizontal_margin_large">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="40dp">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="96dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="旧密码"
@@ -63,13 +64,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:gravity="center"
                 android:inputType="textPassword"
                 android:lines="1"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/text_size_medium3" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -77,13 +77,14 @@
             android:layout_marginTop="@dimen/activity_horizontal_margin_least"
             android:background="@color/light_gray" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="@dimen/layout_horizontal_margin">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="96dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="新密码"
@@ -95,13 +96,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:gravity="center"
                 android:inputType="textPassword"
                 android:lines="1"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/text_size_medium3" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"
@@ -109,13 +109,14 @@
             android:layout_marginTop="@dimen/activity_horizontal_margin_least"
             android:background="@color/light_gray" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
             android:layout_marginTop="@dimen/layout_horizontal_margin">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="96dp"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:text="确认新密码"
@@ -127,13 +128,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@null"
-                android:gravity="center"
                 android:inputType="textPassword"
                 android:lines="1"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/text_size_medium3" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <View
             android:layout_width="match_parent"

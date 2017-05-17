@@ -29,7 +29,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private Button mLoginBtn;
     private TextView mRegistTv;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +54,9 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void initData() {
-
+        String accout = mSputil.getValue("account", "");
+        mPhoneEdit.setText(accout);
+        mPhoneEdit.setSelection(accout.length());
     }
 
     @Override

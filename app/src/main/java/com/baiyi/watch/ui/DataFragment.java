@@ -38,6 +38,7 @@ import com.baiyi.watch.net.ParserServer;
 import com.baiyi.watch.net.PersonApi;
 import com.baiyi.watch.utils.StringUtils;
 import com.baiyi.watch.utils.TimeUtils;
+import com.baiyi.watch.widget.BatteryView;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import org.json.JSONArray;
@@ -54,6 +55,8 @@ public class DataFragment extends BaseFragment implements View.OnClickListener {
     private LinearLayout mDeviceLayout;
     private LinearLayout mLocationLayout;
     private CircleImageView mDeviceAvatarImg;
+    private BatteryView mBatteryView;
+    private TextView mBatteryTv;
     private TextView mDeviceNameTv;
     private TextView mIMEITv;
     private TextView mTypeTv;
@@ -117,6 +120,8 @@ public class DataFragment extends BaseFragment implements View.OnClickListener {
         mDeviceLayout = (LinearLayout) view.findViewById(R.id.device_layout);
         mLocationLayout = (LinearLayout) view.findViewById(R.id.location_layout);
         mDeviceAvatarImg = (CircleImageView) view.findViewById(R.id.device_avatar_imv);
+        mBatteryView = (BatteryView) view.findViewById(R.id.battery);
+        mBatteryTv = (TextView) view.findViewById(R.id.battery_value_tv);
         mDeviceNameTv = (TextView) view.findViewById(R.id.device_name_tv);
         mIMEITv = (TextView) view.findViewById(R.id.imei_tv);
         mTypeTv = (TextView) view.findViewById(R.id.type_tv);
@@ -612,27 +617,27 @@ public class DataFragment extends BaseFragment implements View.OnClickListener {
             public void onComplete(BaseMessage result) {
                 //dismissLoadingDialog();
                 if (result.isSuccess()) {
-//                    Device device = (Device) result.getResult("Device");
-//                    if (null != device) {
-//                        // TODO
-//                        int remain_power = StringUtils.string2Int(device.getRemaining_power());
-//                        mBatteryView.setPower(remain_power);
-//                        mBatteryTv.setText(device.getRemaining_power() + "%");
-//
+                    Device device = (Device) result.getResult("Device");
+                    if (null != device) {
+                        // TODO
+                        int remain_power = StringUtils.string2Int(device.getRemaining_power());
+                        mBatteryView.setPower(remain_power);
+                        mBatteryTv.setText(device.getRemaining_power() + "%");
+
 //                        if ("true".equals(device.getOnline())) {
 //                            mDeviceAvatarImg.setSaturation(1);
 //                        }else {
 //                            mDeviceAvatarImg.setSaturation(0);
 //                        }
-//                    }else {
-//                        mBatteryView.setPower(0);
-//                        mBatteryTv.setText("");
+                    }else {
+                        mBatteryView.setPower(0);
+                        mBatteryTv.setText("");
 //                        mDeviceAvatarImg.setSaturation(0);
-//                    }
-//                } else {
-//                    ActivityUtil.showToast(mContext, result.getError_desc());
-//                    mBatteryView.setPower(0);
-//                    mBatteryTv.setText("");
+                    }
+                } else {
+                    Toasty.error(mContext, result.getError_desc()).show();
+                    mBatteryView.setPower(0);
+                    mBatteryTv.setText("");
 //                    mDeviceAvatarImg.setSaturation(0);
                 }
 

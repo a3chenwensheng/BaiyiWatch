@@ -129,6 +129,7 @@ public class SOSLocationActivity extends BaseActivity implements OnClickListener
 			giflist.add(BitmapDescriptorFactory.fromResource(R.mipmap.alert_5));
 			giflist.add(BitmapDescriptorFactory.fromResource(R.mipmap.alert_6));
 			markerOption.icons(giflist);
+			markerOption.period(1);//设置多少帧刷新一次图片资源，Marker动画的间隔时间，值越小动画越快。
 			markerOption.position(latLng);
 			mAMap.addMarker(markerOption);
 			mAMap.addCircle(new CircleOptions().center(latLng).radius(50).strokeColor(Color.argb(50, 250, 83, 4)).fillColor(Color.argb(30, 250, 83, 4)).strokeWidth(2));

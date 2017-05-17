@@ -20,6 +20,8 @@ public class BaseApi {
 	public static final String NEWS_URL = "http://manager.aiqiangua.com/";
 	// public static final String NEWS_URL = "http://10.0.0.35:8080/";
 
+	public static final String AD_URL = "http://10.0.0.16:8080/";
+
 	// public static final String TOPIC_URL = "http://10.0.0.35:8080/";
 	public static final String TOPIC_URL = "http://manager.aiqiangua.com/";
 	

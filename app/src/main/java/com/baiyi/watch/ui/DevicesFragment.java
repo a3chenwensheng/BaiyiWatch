@@ -15,7 +15,7 @@ import com.baiyi.watch.aqgs2.BaseFragment;
 import com.baiyi.watch.aqgs2.R;
 import com.baiyi.watch.device.DeviceSettingsActivity;
 import com.baiyi.watch.locus.FenceActivity;
-import com.baiyi.watch.record.SelectRecordActivity;
+import com.baiyi.watch.record.RecordsActivity;
 import com.baiyi.watch.remind.RemindWatchListActivity;
 import com.baiyi.watch.renew.ServiceRecordActivity;
 import com.baiyi.watch.sosnumber.SOSNumberListActivity;
@@ -103,7 +103,7 @@ public class DevicesFragment extends BaseFragment implements View.OnClickListene
                 redictToActivity(mContext, SOSNumberListActivity.class, null);
                 break;
             case R.id.record_layout:
-                redictToActivity(mContext, SelectRecordActivity.class, null);
+                redictToActivity(mContext, RecordsActivity.class, null);
                 break;
             case R.id.device_settings_layout:
                 redictToActivity(mContext, DeviceSettingsActivity.class, null);

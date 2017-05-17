@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import com.baiyi.watch.aqgs2.BaseActivity;
 import com.baiyi.watch.aqgs2.R;
 import com.baiyi.watch.dialog.DateTimePickerDialog;
+import com.baiyi.watch.dialog.EditTextDialog;
 import com.baiyi.watch.dialog.RemindModeDialog;
 import com.baiyi.watch.dialog.TimePickerDialog;
 import com.baiyi.watch.model.Device;
@@ -91,6 +93,8 @@ public class RemindEditWatchActivity extends BaseActivity implements OnClickList
     private TimePickerDialog mTimePickerDialog;// 时间选择器对话框
     private DateTimePickerDialog mDatePickerDialog;// 日期选择器对话框
     private RemindModeDialog mRemindModeDialog;// 自定义模式输入对话框
+    private EditTextDialog mEditDialog;//提醒标题输入对话框
+
 
     private SettingAlert mSettingAlert;
     private Device mDevice;
@@ -211,7 +215,7 @@ public class RemindEditWatchActivity extends BaseActivity implements OnClickList
                 save();
                 break;
             case R.id.title_else_btn:
-                //showCustomTitleDialog();
+                showEditDialog(mAlertTitleTv.getText().toString());
                 break;
             case R.id.remind_edit_watch_mode_layout:
                 showModeDialog();
@@ -427,6 +431,39 @@ public class RemindEditWatchActivity extends BaseActivity implements OnClickList
         });
         mRemindModeDialog.show();
 
+    }
+
+    /**
+     * 修改提醒标题输入对话框
+     */
+    private void showEditDialog(String content) {
+        mEditDialog = new EditTextDialog(mContext);
+        mEditDialog.setTitleLineVisibility(View.INVISIBLE);
+        mEditDialog.setTitle("修改昵称");
+        mEditDialog.setInputType(InputType.TYPE_CLASS_TEXT);
+        mEditDialog.setEditContent(content);
+        mEditDialog.setButton("取消", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mEditDialog.cancel();
+            }
+        }, "确认", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String text = mEditDialog.getText();
+                if (text == null) {
+                    mEditDialog.requestFocus();
+                    Toasty.warning(mContext, "内容不能为空").show();
+                } else {
+                    mAlertTitleTv.setText(text);
+                    mEditDialog.dismiss();
+
+                }
+            }
+        });
+        mEditDialog.show();
     }
 
     private void showData(SettingAlert settingAlert) {

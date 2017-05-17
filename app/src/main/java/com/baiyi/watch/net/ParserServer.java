@@ -1,6 +1,7 @@
 package com.baiyi.watch.net;
 
 import com.baiyi.watch.model.Abnormaldata;
+import com.baiyi.watch.model.Ad;
 import com.baiyi.watch.model.Bloodpressuredata;
 import com.baiyi.watch.model.Care;
 import com.baiyi.watch.model.Cellid;
@@ -189,6 +190,9 @@ public class ParserServer {
 		} else if (modelName.equals("Msg_notification")) {
 
 			return paserMsg_notification((Msg_notification) object);
+		} else if (modelName.equals("Ad")) {
+
+			return paserAd((Ad) object);
 		}
 
 		return object;
@@ -224,7 +228,7 @@ public class ParserServer {
 	/**
 	 * 解析Pedometerdata对象
 	 * 
-	 * @param Powerdata
+	 * @param pd
 	 * @return
 	 * @throws Exception
 	 */
@@ -242,7 +246,7 @@ public class ParserServer {
 	/**
 	 * 解析Heartratedata对象
 	 * 
-	 * @param Powerdata
+	 * @param hd
 	 * @return
 	 * @throws Exception
 	 */
@@ -521,7 +525,7 @@ public class ParserServer {
 	/**
 	 * 解析Abnormaldata对象
 	 * 
-	 * @param Powerdata
+	 * @param hd
 	 * @return
 	 * @throws Exception
 	 */
@@ -543,7 +547,7 @@ public class ParserServer {
 	/**
 	 * 解析Sleepdata对象
 	 * 
-	 * @param Powerdata
+	 * @param sd
 	 * @return
 	 * @throws Exception
 	 */
@@ -585,7 +589,7 @@ public class ParserServer {
 	/**
 	 * 解析Bloodpressuredata对象
 	 * 
-	 * @param Powerdata
+	 * @param bpd
 	 * @return
 	 * @throws Exception
 	 */
@@ -627,7 +631,7 @@ public class ParserServer {
 	/**
 	 * 解析Sosdata对象
 	 * 
-	 * @param Powerdata
+	 * @param hd
 	 * @return
 	 * @throws Exception
 	 */
@@ -912,7 +916,7 @@ public class ParserServer {
 	/**
 	 * 解析ArrayList<Notifdata>
 	 * 
-	 * @param devicesStr
+	 * @param notifdataStr
 	 * @return
 	 * @throws Exception
 	 */
@@ -987,6 +991,11 @@ public class ParserServer {
 		return msg_notification;
 	}
 
+	public static Ad paserAd(Ad ad) throws Exception {
+		//TODO
+		return ad;
+	}
+
 	public static ArrayList<Wifi> paserWifis(String str) throws Exception {
 		if (str == null || str.equals("")) {
 			return null;
@@ -1033,7 +1042,7 @@ public class ParserServer {
 	/**
 	 * 解析person对象
 	 * 
-	 * @param person
+	 * @param str
 	 * @return
 	 * @throws Exception
 	 */
@@ -1058,7 +1067,7 @@ public class ParserServer {
 	/**
 	 * 解析powerdata对象
 	 * 
-	 * @param Powerdata
+	 * @param pd
 	 * @return
 	 * @throws Exception
 	 */
@@ -1238,7 +1247,7 @@ public class ParserServer {
 	/**
 	 * 解析Cellid对象
 	 * 
-	 * @param member
+	 * @param str
 	 * @return
 	 */
 	public static ArrayList<Cellid> paserCellids(String str) throws Exception {
@@ -1288,7 +1297,7 @@ public class ParserServer {
 	/**
 	 * 解析device对象
 	 * 
-	 * @param member
+	 * @param str
 	 * @return
 	 */
 
@@ -1342,7 +1351,7 @@ public class ParserServer {
 	/**
 	 * 解析ArrayList<SettingToolNumber>
 	 * 
-	 * @param settingToolNumber
+	 * @param toolNumberStr
 	 * @return
 	 * @throws Exception
 	 */
@@ -1468,7 +1477,7 @@ public class ParserServer {
 	/**
 	 * 解析Page对象
 	 * 
-	 * @param person
+	 * @param page
 	 * @return
 	 * @throws Exception
 	 */
@@ -1641,7 +1650,7 @@ public class ParserServer {
 	/**
 	 * 解析Comments对象
 	 * 
-	 * @param starsStr
+	 * @param commentsStr
 	 * @return
 	 * @throws Exception
 	 */
@@ -1675,7 +1684,7 @@ public class ParserServer {
 	/**
 	 * 解析List<PageComment>
 	 * 
-	 * @param starsStr
+	 * @param commentsStr
 	 * @return
 	 * @throws Exception
 	 */
@@ -1709,7 +1718,7 @@ public class ParserServer {
 	/**
 	 * 解析ArrayList<Member4Show>
 	 * 
-	 * @param devicesStr
+	 * @param membersStr
 	 * @return
 	 * @throws Exception
 	 */
@@ -1730,7 +1739,7 @@ public class ParserServer {
 	/**
 	 * 解析Member4Show对象
 	 * 
-	 * @param member
+	 * @param member4Show
 	 * @return
 	 */
 	public static Member4Show paserMember4Show(Member4Show member4Show) throws Exception {
@@ -1778,7 +1787,7 @@ public class ParserServer {
 	/**
 	 * 解析ArrayList<String>
 	 * 
-	 * @param devicesStr
+	 * @param str
 	 * @return
 	 * @throws Exception
 	 */

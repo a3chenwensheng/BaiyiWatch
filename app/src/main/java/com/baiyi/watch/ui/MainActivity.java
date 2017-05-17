@@ -1,6 +1,10 @@
 package com.baiyi.watch.ui;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -9,6 +13,12 @@ import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.baiyi.watch.aqgs2.BaseActivity;
 import com.baiyi.watch.aqgs2.R;
+import com.baiyi.watch.dialog.AdDialog;
+import com.baiyi.watch.dialog.RemindModeDialog;
+import com.baiyi.watch.model.Ad;
+import com.baiyi.watch.net.AdApi;
+import com.baiyi.watch.net.BaseMessage;
+import com.baiyi.watch.net.HttpCallback;
 
 import java.util.ArrayList;
 
@@ -22,6 +32,8 @@ public class MainActivity extends BaseActivity {
     private ReportFragment reportFragment = new ReportFragment();
     private DevicesFragment devicesFragment = new DevicesFragment();
     private UserFragment userFragment = new UserFragment();
+
+    private AdDialog mAdDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +101,14 @@ public class MainActivity extends BaseActivity {
         });
 
         mVpHome.setOffscreenPageLimit(4);
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                getLastAd();
+            }
+        }, 3000);
     }
 
     @Override
@@ -98,5 +118,59 @@ public class MainActivity extends BaseActivity {
 //        if (dataFragment.isVisible()){
 //            dataFragment.refreshData();
 //        }
+    }
+
+    private void getLastAd() {
+
+        // showLoadingDialog("请求中...");
+        AdApi.getInstance(mContext).getLastAd(new HttpCallback() {
+
+            @Override
+            public void onError(String error) {
+                // dismissLoadingDialog();
+            }
+
+            @Override
+            public void onComplete(BaseMessage result) {
+                // dismissLoadingDialog();
+                if (result.isSuccess()) {
+                    try {
+                        Ad ad = (Ad) result.getResult("Ad");
+                        showAdDialog(ad);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        });
+
+    }
+
+    /**
+     * 显示广告弹屏
+     */
+    private void showAdDialog(final Ad ad) {
+
+        if (mAdDialog != null) {
+            mAdDialog.dismiss();
+        }
+        mAdDialog = new AdDialog(mContext, ad.getPic_url());
+        mAdDialog.setCanceledOnTouchOutside(false);
+        mAdDialog.setRedictTo(new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                Uri uri = Uri.parse(ad.getUrl());
+                Intent it = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(it);
+
+                mAdDialog.dismiss();
+            }
+        });
+        mAdDialog.show();
+
     }
 }

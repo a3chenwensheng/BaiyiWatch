@@ -125,7 +125,7 @@
             android:name="com.baiyi.watch.locus.FenceActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.baiyi.watch.record.SelectRecordActivity"
+            android:name="com.baiyi.watch.record.RecordsActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.baiyi.watch.data.HeartRateActivity"
@@ -149,13 +149,16 @@
             android:name="com.baiyi.watch.sosnumber.SOSNumberEditActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.baiyi.watch.record.ListSOSActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.baiyi.watch.record.SOSLocationActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name="com.baiyi.watch.renew.PayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.add.AddAppMemberActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.baiyi.watch.add.BeInvitedActivity"
             android:screenOrientation="portrait" />
 
 

@@ -1,7 +1,10 @@
 package com.baiyi.watch.ui;
 
+import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +17,7 @@ import com.baiyi.watch.aqgs2.BaseFragment;
 import com.baiyi.watch.aqgs2.MyApplication;
 import com.baiyi.watch.aqgs2.R;
 import com.baiyi.watch.auth.ChangePsdActivity;
+import com.baiyi.watch.dialog.EditTextDialog;
 import com.baiyi.watch.member.ListMemberActivity;
 import com.baiyi.watch.model.Person;
 import com.baiyi.watch.net.BaseApi;
@@ -22,6 +26,7 @@ import com.baiyi.watch.net.HttpCallback;
 import com.baiyi.watch.net.PersonApi;
 import com.baiyi.watch.user.AboutActivity;
 import com.baiyi.watch.user.SettingsPushActivity;
+import com.baiyi.watch.utils.ActivityUtil;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -41,6 +46,8 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
     private Button mLogoutBtn;
 
     private Person mPerson;
+
+    private EditTextDialog mNicknameDialog;//修改昵称输入对话框
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -111,7 +118,7 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.nick_name_layout:
-
+                showNicknameDialog(mNickNameTv.getText().toString());
                 break;
             case R.id.password_layout:
                 redictToActivity(mContext, ChangePsdActivity.class, null);
@@ -134,9 +141,82 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
         }
     }
 
+    /**
+     * 修改昵称输入对话框
+     */
+    private void showNicknameDialog(String content) {
+        mNicknameDialog = new EditTextDialog(mContext);
+        mNicknameDialog.setTitleLineVisibility(View.INVISIBLE);
+        mNicknameDialog.setTitle("修改昵称");
+        mNicknameDialog.setInputType(InputType.TYPE_CLASS_TEXT);
+        mNicknameDialog.setEditContent(content);
+        mNicknameDialog.setButton("取消", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                mNicknameDialog.cancel();
+            }
+        }, "确认", new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                String text = mNicknameDialog.getText();
+                if (text == null) {
+                    mNicknameDialog.requestFocus();
+                    Toasty.warning(mContext, "内容不能为空").show();
+                } else {
+                    mNickNameTv.setText(text);
+                    mNicknameDialog.dismiss();
+
+                    editPerson("nickname", text);
+                }
+            }
+        });
+        mNicknameDialog.show();
+
+    }
+
+    private void editPerson(final String key, final String value) {
+
+        if (mPerson == null) {
+            Toasty.error(mContext, "请先登录").show();
+            logout();
+            return;
+        }
+
+        //showLoadingDialog("处理中...");
+        PersonApi.getInstance(mContext).editPerson(mPerson.mId, key, value, new HttpCallback() {
+
+            @Override
+            public void onError(String error) {
+                //dismissLoadingDialog();
+                Toasty.error(mContext, error).show();
+            }
+
+            @Override
+            public void onComplete(BaseMessage result) {
+                //dismissLoadingDialog();
+                if (result.isSuccess()) {
+                    // TODO
+                    // DB
+                    ContentValues cv = new ContentValues();
+                    cv.put(key, value);
+                    MyApplication.getInstance().getPersonDaoInface().updatePerson(cv, "_id = ?", new String[]{mPerson.mId});
+
+                    getPersonInfo();
+                } else {
+                    Toasty.error(mContext, result.getError_desc()).show();
+                }
+
+            }
+        });
+
+    }
+
     private void getPersonInfo() {
         if (mPerson == null) {
             Toasty.error(mContext, "请先登录").show();
+            logout();
             return;
         }
 
@@ -146,7 +226,7 @@ public class UserFragment extends BaseFragment implements View.OnClickListener {
             @Override
             public void onError(String error) {
                 ///dismissLoadingDialog();
-
+                Toasty.error(mContext, error).show();
             }
 
             @Override
